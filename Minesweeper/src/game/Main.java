@@ -10,17 +10,20 @@ public class Main {
 
 		try (Scanner scanner = new Scanner(System.in)) {
 
-			int size = Input.in.getGameSize(scanner);
-
-			Board gameBoard = new Board(size);
-			Output.out.clearConsole();
-
-			System.out.println("Minesweeper with " + (size * size) + " squares");
-			System.out.println("There are " + size + " bombs");
-
-			Output.out.printGame(gameBoard);
+			int size = Input.in.getGameSize();
+			playGame(size);
 
 		}
 
+	}
+
+	public static void playGame(int size) {
+		boolean gameEnded = false;
+
+		Board gameBoard = new Board(size);
+		while (!gameEnded) {
+			Output.out.printGame(gameBoard);
+			gameEnded = gameBoard.getMove();
+		}
 	}
 }
