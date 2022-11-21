@@ -2,7 +2,7 @@
  * 
  */
 /**
- * @author matth
+ * @author Matthew Pepper
  *
  */
 module Minesweeper {
