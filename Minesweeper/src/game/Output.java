@@ -1,21 +1,23 @@
 package game;
 
 public class Output {
-	final String F_RED = "\u001B[31m";
-	final String F_GREEN = "\u001B[32m";
-	final String F_YELLOW = "\u001B[33m";
-	final String F_MAGENTA = "\u001B[35m";
-	final String F_LRED = "\u001B[91m";
-	final String F_LGREEN = "\u001B[92m";
-	final String F_LYELLOW = "\u001B[33m";
-	final String F_LBLUE = "\u001B[94m";
-	final String F_WHITE = "\u001B[97m";
-	final String F_DEF = "\u001B[39m";
+	// colours for font
+	private final String F_RED = "\u001B[31m";
+	private final String F_GREEN = "\u001B[32m";
+	private final String F_YELLOW = "\u001B[33m";
+	private final String F_MAGENTA = "\u001B[35m";
+	private final String F_LRED = "\u001B[91m";
+	private final String F_LGREEN = "\u001B[92m";
+	private final String F_LYELLOW = "\u001B[33m";
+	private final String F_LBLUE = "\u001B[94m";
+	private final String F_WHITE = "\u001B[97m";
+	private final String F_DEF = "\u001B[39m";
 	
-	
-	final String B_GREY = "\u001B[47m";
-	final String B_DEF = "\u001B[49m";
-	final String B_BLUE = "\u001B[46m";
+	// colours for background
+	private final String B_GREY = "\u001B[47m";
+	private final String B_DEF = "\u001B[49m";
+	private final String B_BLUE = "\u001B[46m";
+	private final String B_RED = "\u001B[41m";
 
 	public static Output out;
 
@@ -33,6 +35,14 @@ public class Output {
 		for (int i = 0; i < n; i++) {
 			System.out.format("    %3d", i + 1);
 		}
+	}
+	
+	public void youLose() {
+		System.out.println("\n Boom!");
+	}
+	
+	public void youWin() {
+		System.out.println("\n You Won!");
 	}
 
 	public void printGame(Board board) {
@@ -96,7 +106,7 @@ public class Output {
 		case '8':
 			return F_LYELLOW;
 		case 'B':
-			return F_RED;
+			return F_WHITE + "" + B_RED;
 		default:
 			return F_WHITE;
 

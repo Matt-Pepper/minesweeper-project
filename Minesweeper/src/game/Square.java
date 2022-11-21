@@ -20,7 +20,6 @@ public class Square {
 	public void setBomb() {
 		this.isBomb = true;
 		this.bombsAround = -1;
-		this.state = 'B';
 	}
 
 	public void increaseBombsAround() {
@@ -28,21 +27,27 @@ public class Square {
 			bombsAround++;
 		}
 	}
+	
+	public Integer getBombsAround() {
+		return this.bombsAround;
+	}
 
 	public void reveal() {
 		this.isRevealed = true;
-		if(bombsAround == 0) {
+		if (isBomb) {
+			this.state = 'B';
+		} else if (bombsAround == 0) {
 			this.state = ' ';
-		} else {
+		} else if (bombsAround > 0) {
 			String numb = bombsAround.toString();
-			this.state = numb.charAt(0);			
+			this.state = numb.charAt(0);
 		}
 	}
 
 	public boolean getBomb() {
 		return isBomb;
 	}
-	
+
 	public boolean getIsRevealed() {
 		return isRevealed;
 	}

@@ -14,16 +14,33 @@ public class Main {
 			playGame(size);
 
 		}
-
 	}
 
 	public static void playGame(int size) {
 		boolean gameEnded = false;
+		String result = "";
 
 		Board gameBoard = new Board(size);
 		while (!gameEnded) {
 			Output.out.printGame(gameBoard);
-			gameEnded = gameBoard.getMove();
+			result = gameBoard.getMove();
+			if (result == "win") {
+				gameEnded = true;
+			}
+			if (result == "lose") {
+				gameEnded = true;
+			}
+		}
+		Output.out.printGame(gameBoard);
+		switch (result) {
+		case "win":
+			Output.out.youWin();
+			break;
+		case "lose":
+			Output.out.youLose();
+			break;
+		default:
+			break;
 		}
 	}
 }
