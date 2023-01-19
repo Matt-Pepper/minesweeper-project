@@ -1,19 +1,32 @@
 # MineSweeper Java Terminal App
 
-![Minesweeper game won](images/image3.PNG)
+A terminal-based version of the classic game Minesweeper, where the goal is to clear a minefield without detonating a mine.
 
-## How To Run
-1. Open terminal in main folder (minesweeper-project)
-2. Type the following into your terminal
+## Getting Started
+
+1. Open the terminal in the main folder (minesweeper-project)
+2. Type the following command into your terminal:
 ```
 java -jar .ms.jar
 ```
 
+### Prerequisites
+- Java 
 
 ## Images
 ### Game Started Screen
 ![Minesweeper game started](images/image1.PNG)
 ### Game In Progress
-![Minesweeper game started](images/image2.PNG)
+![Minesweeper game in progress](images/image2.PNG)
+### Game Won Screen
+![Minesweeper game won](images/image3.PNG)
 ### Game Lost Screen
-![Minesweeper game started](images/image4.PNG)
+![Minesweeper game lost](images/image4.PNG)
+
+## Built With
+- Java
+
+## Features
+- Classic minesweeper gameplay
+- Terminal-based interface
+- Game lost and won screen
